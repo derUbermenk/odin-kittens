@@ -23,7 +23,7 @@ Things you may want to cover:
 
 * ...
 
-<h1> Odin Kittens <h1><br>
+<h1> Odin Kittens </h1><br>
 <small><i>
   An implementation of a data producing API from the 
   <a href="https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby-on-rails/lessons/kittens-api">
