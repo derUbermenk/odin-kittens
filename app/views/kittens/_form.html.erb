@@ -12,6 +12,19 @@
   <% end %>
 
   <div class="actions">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <%= form.label :age, "Age(yrs)" %>
+    <%= form.number_field :age, in: 0..20, step: 1 %>
+    <%= form.label :cuteness %>
+    <%= form.range_field :cuteness, in: 0..100 %>
+    <%= form.label :softness %>
+    <%= form.range_field :softness, in: 0..100 %>
+  </div>
+
+
+
+  <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>

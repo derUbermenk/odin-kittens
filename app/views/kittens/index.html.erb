@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Kittens</h1>
 
 <table>
@@ -12,9 +10,10 @@
   <tbody>
     <% @kittens.each do |kitten| %>
       <tr>
-        <td><%= link_to 'Show', kitten %></td>
-        <td><%= link_to 'Edit', edit_kitten_path(kitten) %></td>
-        <td><%= link_to 'Destroy', kitten, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><strong><%= kitten.name %></strong><td>
+        <td><small><%= link_to 'Show', kitten %></small></td>
+        <td><small><%= link_to 'Edit', edit_kitten_path(kitten) %></small></td>
+        <td><small><%= link_to 'Destroy', kitten, method: :delete, data: { confirm: 'Are you sure?' } %></small></td>
       </tr>
     <% end %>
   </tbody>

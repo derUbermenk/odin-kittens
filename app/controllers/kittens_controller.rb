@@ -25,9 +25,11 @@ class KittensController < ApplicationController
 
     respond_to do |format|
       if @kitten.save
+        flash.notice = 'Kitten created successfully'
         format.html { redirect_to kitten_url(@kitten), notice: "Kitten was successfully created." }
         format.json { render :show, status: :created, location: @kitten }
       else
+        flash.alert = 'Error creating kitten'
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @kitten.errors, status: :unprocessable_entity }
       end
@@ -38,9 +40,11 @@ class KittensController < ApplicationController
   def update
     respond_to do |format|
       if @kitten.update(kitten_params)
+        flash.notice = 'Kitten updated successfully'
         format.html { redirect_to kitten_url(@kitten), notice: "Kitten was successfully updated." }
         format.json { render :show, status: :ok, location: @kitten }
       else
+        flash.alert = 'Error updating kitten'
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @kitten.errors, status: :unprocessable_entity }
       end
@@ -65,6 +69,7 @@ class KittensController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def kitten_params
-      params.fetch(:kitten, {})
+      #params.fetch(:kitten, {})
+      params[:kitten].permit(:name, :age, :cuteness, :softness)
     end
 end
